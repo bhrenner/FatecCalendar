@@ -90,7 +90,7 @@ class Grade_Deslogado(Screen):
 
 class Grade(Screen):
     def add_table(self, arquivo):
-        path = 'grade/' + arquivo + '.csv'
+        path = 'FatecCalendar/grade/' + arquivo + '.csv'
         tabela = pd.read_csv(path)
         cols = tabela.columns.values
         vals = tabela.values
@@ -157,15 +157,108 @@ class Aula(Screen):
     pass
 
 class Faltas(Screen):
+    def add_table(self, arquivo):
+        path = 'FatecCalendar/info/' + arquivo + '.csv'
+        tabela = pd.read_csv(path)
+        cols = tabela.columns.values
+        vals = tabela.values
+        screen = Screen()
+		# Define Table
+        table = MDDataTable(
+			pos_hint = {'center_x': 0.5, 'center_y': 0.51},
+			size_hint =(0.9, 0.8),
+			use_pagination = True,
+			rows_num = 10,
+			pagination_menu_height = '240dp',
+			pagination_menu_pos = "auto",
+			background_color = [1,0,0,.5],
+
+			column_data = [
+				(col, dp(40))
+                for col in cols
+			],
+			row_data = vals
+			)
+        self.add_widget(table)
+    pass
     pass
 
 class Avaliacoes(Screen):
+    def add_table(self, arquivo):
+        path = 'FatecCalendar/info/' + arquivo + '.csv'
+        tabela = pd.read_csv(path)
+        cols = tabela.columns.values
+        vals = tabela.values
+        screen = Screen()
+		# Define Table
+        table = MDDataTable(
+			pos_hint = {'center_x': 0.5, 'center_y': 0.51},
+			size_hint =(0.9, 0.8),
+			use_pagination = True,
+			rows_num = 10,
+			pagination_menu_height = '240dp',
+			pagination_menu_pos = "auto",
+			background_color = [1,0,0,.5],
+
+			column_data = [
+				(col, dp(40))
+                for col in cols
+			],
+			row_data = vals
+			)
+        self.add_widget(table)
     pass
 
 class Notas(Screen):
+    def add_table(self, arquivo):
+        path = 'FatecCalendar/info/' + arquivo + '.csv'
+        tabela = pd.read_csv(path)
+        cols = tabela.columns.values
+        vals = tabela.values
+        screen = Screen()
+		# Define Table
+        table = MDDataTable(
+			pos_hint = {'center_x': 0.5, 'center_y': 0.51},
+			size_hint =(0.9, 0.8),
+			use_pagination = True,
+			rows_num = 10,
+			pagination_menu_height = '240dp',
+			pagination_menu_pos = "auto",
+			background_color = [1,0,0,.5],
+
+			column_data = [
+				(col, dp(40))
+                for col in cols
+			],
+			row_data = vals
+			)
+        self.add_widget(table)
     pass
 
 class Extrato(Screen):
+    def add_table(self, arquivo):
+        path = 'FatecCalendar/info/' + arquivo + '.csv'
+        tabela = pd.read_csv(path)
+        cols = tabela.columns.values
+        vals = tabela.values
+        screen = Screen()
+		# Define Table
+        table = MDDataTable(
+			pos_hint = {'center_x': 0.5, 'center_y': 0.51},
+			size_hint =(0.9, 0.8),
+			use_pagination = True,
+			rows_num = 10,
+			pagination_menu_height = '240dp',
+			pagination_menu_pos = "auto",
+			background_color = [1,0,0,.5],
+
+			column_data = [
+				(col, dp(40))
+                for col in cols
+			],
+			row_data = vals
+			)
+        self.add_widget(table)
     pass
 
 class Content(BoxLayout):
@@ -218,7 +311,6 @@ class Myapp(MDApp):
         usuario = self.root.ids.user.text
         senha = self.root.ids.senha.text
         navegador = acesso_usuario(usuario,senha)
-        sobre(navegador)
         horario(navegador)
         return print(f'usuario: {usuario}, senha: {senha}')
     
@@ -235,6 +327,27 @@ class Myapp(MDApp):
                 self.dialog = MDDialog(
                     title = "Erro!!! Você não selecionou os campos corretamente!",
                     text = "Selecione um Curso e um Semestre para proseguir...",
+                    buttons =[
+                        MDRectangleFlatButton(
+                            text="OK", text_color=self.theme_cls.primary_color, on_release = self.close_dialog
+                            ),
+                        ],
+                    )
+            self.dialog.open()
+            return True
+        else:
+            #caminho = '/' + curso + '/' + semestre
+            return False
+
+    def alerta_user(self):
+        usuario = self.root.ids.user.text
+        senha = self.root.ids.senha.text
+
+        if (usuario == '') or (senha == ''):
+            if not self.dialog:
+                self.dialog = MDDialog(
+                    title = "Erro!!! Você Precisa digitar todos os campos!",
+                    text = "Digite seu Usuário e Senha do SIGA para proseguir...",
                     buttons =[
                         MDRectangleFlatButton(
                             text="OK", text_color=self.theme_cls.primary_color, on_release = self.close_dialog

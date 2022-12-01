@@ -1,0 +1,47 @@
+1669924077015	geckodriver	INFO	Listening on 127.0.0.1:63819
+1669924080099	mozrunner::runner	INFO	Running command: "C:\\Users\\bhrenner.wilson\\AppData\\Local\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "63820" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\BHRENN~1.WIL\\AppData\\Local\\Temp\\rust_mozprofileI6hujb"
+*** You are running in headless mode.
+1669924080947	Marionette	INFO	Marionette enabled
+1669924080953	Marionette	INFO	Listening on port 63829
+Read port: 63829
+WebDriver BiDi listening on ws://127.0.0.1:63820
+1669924081084	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\BHRENN~1.WIL\\AppData\\Local\\Temp\\rust_mozprofileI6hujb\\search.json.mozlz4", (void 0)))
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+DevTools listening on ws://127.0.0.1:63820/devtools/browser/a7fccb56-aac9-4267-a0d2-16786d424476
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://siga.cps.sp.gov.br."
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:64168
+1669924704033	mozrunner::runner	INFO	Running command: "C:\\Users\\bhrenner.wilson\\AppData\\Local\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "64169" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\BHRENN~1.WIL\\AppData\\Local\\Temp\\rust_mozprofileH6XbNn"
+*** You are running in headless mode.
+1669924704585	Marionette	INFO	Marionette enabled
+1669924704591	Marionette	INFO	Listening on port 64178
+WebDriver BiDi listening on ws://127.0.0.1:64169
+Read port: 64178
+1669924704843	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\BHRENN~1.WIL\\AppData\\Local\\Temp\\rust_mozprofileH6XbNn\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:64169/devtools/browser/53b286b5-5165-4163-8eea-1ab0cbaae1ec
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://siga.cps.sp.gov.br."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://siga.cps.sp.gov.br."
+1669926536649	geckodriver	INFO	Listening on 127.0.0.1:65098
+1669926539735	mozrunner::runner	INFO	Running command: "C:\\Users\\bhrenner.wilson\\AppData\\Local\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "65099" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\BHRENN~1.WIL\\AppData\\Local\\Temp\\rust_mozprofileVGLkFj"
+*** You are running in headless mode.
+1669926540543	Marionette	INFO	Marionette enabled
+1669926540549	Marionette	INFO	Listening on port 65109
+Read port: 65109
+WebDriver BiDi listening on ws://127.0.0.1:65099
+1669926540694	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\BHRENN~1.WIL\\AppData\\Local\\Temp\\rust_mozprofileVGLkFj\\search.json.mozlz4", (void 0)))
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+DevTools listening on ws://127.0.0.1:65099/devtools/browser/587d942e-97fe-49e1-99a5-ae4a293406ef
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://siga.cps.sp.gov.br."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://siga.cps.sp.gov.br."
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.sys.mjs", 415))

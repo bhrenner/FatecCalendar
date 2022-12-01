@@ -152,8 +152,10 @@
                 size_hint_y: 0.07
                 md_bg_color: 175/255, 42/255, 42/255, 1
                 font_size: '25sp'
-                on_release: 
-                    root.navigation("home_com_login")
+                on_release:
+                    if  app.alerta_user() == True:\
+                    print("Errado")
+                    else: app.logar_siga(), root.navigation("home_com_login")
  
  
             MDToolbar:
@@ -556,12 +558,28 @@
             pos_hint:{"center_x": 0.5, "center_y":0.73}
 
         MDLabel:
-            text: "Selecione o curso"
+            text: "Bhrenner Wilson Marcelino"
             halign: "center"
-            pos_hint:{"center_x": 0.5,  "center_y":0.53}
+            pos_hint:{"center_x": 0.5,  "center_y":0.50}
             theme_text_color: 'Custom'
             text_color: 0,0,0,1
-            font_size: "25sp"
+            font_size: "20sp"
+
+        MDLabel:
+            text: "RA:2760481821049 Ciclo: 6"
+            halign: "center"
+            pos_hint:{"center_x": 0.5,  "center_y":0.45}
+            theme_text_color: 'Custom'
+            text_color: 0,0,0,1
+            font_size: "20sp"
+        
+        MDLabel:
+            text: "bhrenner.marcelino@fatec.sp.gov.br"
+            halign: "center"
+            pos_hint:{"center_x": 0.5,  "center_y":0.40}
+            theme_text_color: 'Custom'
+            text_color: 0,0,0,1
+            font_size: "20sp"
 
     MDBottomAppBar:
         md_bg_color: 143/255, 21/255, 21/255, 1
@@ -739,6 +757,7 @@
 
 <Faltas>:
     name: "faltas"
+    on_enter: root.add_table('faltas_parciais')
     MDLabel:
         text: "Faltas Parciais"
         halign: "center"
@@ -755,6 +774,7 @@
 
 <Avaliacoes>:
     name: "avaliacoes"
+    on_enter: root.add_table('calendario_avaliacoes')
     MDLabel:
         text: "Datas de Avaliações"
         halign: "center"
@@ -771,6 +791,7 @@
 
 <Notas>:
     name: "notas"
+    on_enter: root.add_table('notas_parciais')
     MDLabel:
         text: "Notas Parciais"
         halign: "center"
@@ -787,6 +808,7 @@
 
 <Extrato>:
     name: "extrato"
+    on_enter: root.add_table('extrato_completo')
     MDLabel:
         text: "Extrato simples"
         halign: "center"

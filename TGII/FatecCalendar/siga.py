@@ -88,10 +88,94 @@ def sobre(navegador):
             tabela = soup.find(name="table")
             df = pd.read_html(str(tabela))[0]
             df = df.dropna(axis=1)
-            df.to_csv("FatecCalendar/infoAluno/" + str(lista[d]) + ".csv", encoding="UTF-8", sep=",", index=False)
+            df.to_csv("FatecCalendar/info/" + str(lista[d]) + ".csv", encoding="UTF-8", sep=",", index=False)
             d = d + 1
         
     except WebDriverException as erro:
         #print("Erro - exceção Webdriverexception: ", erro, file=sys.stderr)
+        respostaLogin = navegador.find_element(by=By.ID, value="span_vSAIDA")
+        return respostaLogin.text
+
+def info(navegador):
+    try:
+        lista = [] 
+        #//////////////////////////////////////////////////////////////  
+        linkHistorico = navegador.find_element(by=By.ID, value="ygtvlabelel6")
+        linkHistorico.click()
+        sleep(1)
+
+        extrato_hist_simples = navegador.find_element(by=By.ID, value="Grid1ContainerTbl")
+        lista.append(extrato_hist_simples)
+
+        conteudo_html = extrato_hist_simples.get_attribute("outerHTML")
+        soup = BeautifulSoup(conteudo_html, "html.parser")
+        tabela = soup.find(name="table")
+        df = pd.read_html(str(tabela))[0]
+        df = df.dropna(axis=1)
+        df.to_csv("FatecCalendar/info/extrato_simples.csv", encoding="UTF-8", sep=",", index=False)
+
+        #//////////////////////////////////////////////////////////////
+        linkHistoricoCom = navegador.find_element(by=By.ID, value="ygtvlabelel8")
+        linkHistoricoCom.click()
+        sleep(1)
+
+        extrato_hist_com = navegador.find_element(by=By.ID, value="Grid1ContainerTbl")
+        lista.append(extrato_hist_com)
+
+        conteudo_html = extrato_hist_com.get_attribute("outerHTML")
+        soup = BeautifulSoup(conteudo_html, "html.parser")
+        tabela = soup.find(name="table")
+        df = pd.read_html(str(tabela))[0]
+        df = df.dropna(axis=1)
+        df.to_csv("FatecCalendar/info/extrato_completo.csv", encoding="UTF-8", sep=",", index=False)
+
+        #//////////////////////////////////////////////////////////////
+        link_parc_notas = navegador.find_element(by=By.ID, value="ygtvlabelel10")
+        link_parc_notas.click()
+        sleep(1)
+
+        #pensar num jeito de verificar automaticamente o nº de materias no siga
+        tabela_notas = navegador.find_element(by=By.ID, value="Grid4ContainerTbl")
+        lista.append(tabela_notas)
+
+        conteudo_html = tabela_notas.get_attribute("outerHTML")
+        soup = BeautifulSoup(conteudo_html, "html.parser")
+        tabela = soup.find(name="table")
+        df = pd.read_html(str(tabela))[0]
+        #df = df.dropna(axis=1)
+        df.to_csv("FatecCalendar/info/notas_parciais.csv", encoding="UTF-8", sep=",", index=False)
+
+        #//////////////////////////////////////////////////////////////
+        link_parc_faltas = navegador.find_element(by=By.ID, value="ygtvlabelel11")
+        link_parc_faltas.click()
+        sleep(1)
+
+        tabela_faltas = navegador.find_element(by=By.ID, value="Grid1ContainerTbl")
+        lista.append(tabela_faltas)
+
+        conteudo_html = tabela_faltas.get_attribute("outerHTML")
+        soup = BeautifulSoup(conteudo_html, "html.parser")
+        tabela = soup.find(name="table")
+        df = pd.read_html(str(tabela))[0]
+        df = df.dropna(axis=1)
+        df.to_csv("FatecCalendar/info/faltas_parciais.csv", encoding="UTF-8", sep=",", index=False)
+
+        #//////////////////////////////////////////////////////////////
+        calendario_provas = navegador.find_element(by=By.ID, value="ygtvlabelel13")
+        calendario_provas.click()
+        sleep(1)
+
+        calendario_avaliacoes = navegador.find_element(by=By.ID, value="Grid1ContainerTbl")
+
+        conteudo_html = calendario_avaliacoes.get_attribute("outerHTML")
+        soup = BeautifulSoup(conteudo_html, "html.parser")
+        tabela = soup.find(name="table")
+        df = pd.read_html(str(tabela))[0]
+
+        df = df.dropna(thresh=2)
+        df.to_csv("FatecCalendar/info/calendario_avaliacoes.csv", encoding="UTF-8", sep=",", index=False)
+
+    except WebDriverException as erro:
+        print("Erro - exceção Webdriverexception: ", erro, file=sys.stderr)
         respostaLogin = navegador.find_element(by=By.ID, value="span_vSAIDA")
         return respostaLogin.text
