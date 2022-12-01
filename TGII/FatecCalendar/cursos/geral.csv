@@ -1,0 +1,59 @@
+﻿Semestre,Dia,Horário,Sala,Curso,Disciplina,Nome,Professor
+1,SEG,07:40-08:30,Sala 17,ADS,MMD001,Matemática Discreta,Clayde Mendes
+1,SEG,08:30-09:20,Sala 17,ADS,MMD001,Matemática Discreta,Clayde Mendes
+1,SEG,09:30-10:20,Lab.1,ADS,ILM001,Prog. Microinfomática,Jaime Ossada
+1,SEG,10:20-11:10,Lab.1,ADS,ILM001,Prog. Microinfomática,Jaime Ossada
+2,SEG,07:40-08:30,Lab.2,ADS,ISI002,Sistemas da Informação,Anderson Coan
+2,SEG,08:30-09:20,Lab.2,ADS,ISI002,Sistemas da Informação,Anderson Coan
+2,SEG,09:30-10:20,Sala 24,ADS,LPO001,Comunicação e Expressão,Flavio Pereira
+2,SEG,10:20-11:10,Sala 24,ADS,LPO001,Comunicação e Expressão,Flavio Pereira
+2,SEG,11:20-12:10,Lab.3,ADS,IES100,Engenharia de Software I,Anderson Barbosa
+2,SEG,12:10-13:00,Lab.3,ADS,IES100,Engenharia de Software I,Anderson Barbosa
+3,SEG,07:40-08:30,Sala 18,ADS,CCG006,Contabilidade,Sandro Cosso
+3,SEG,08:30-09:20,Sala 18,ADS,CCG006,Contabilidade,Sandro Cosso
+3,SEG,09:30-10:20,Lab.2,ADS,IED001,Estrutura de Dados,Anderson Coan
+3,SEG,10:20-11:10,Lab.2,ADS,IED001,Estrutura de Dados,Anderson Coan
+3,SEG,11:20-12:10,Lab.6,ADS,ISO200,Sistemas Operacionais II,Luciano Fernandes
+4,SEG,12:10-13:00,Lab.7,ADS,ISO201,Sistemas Operacionais II,Luciano Fernandes
+4,SEG,07:40-08:30,Lab.3,ADS,AGO005,Gestão de Projetos,Anderson Barbosa
+4,SEG,08:30-09:20,Lab.3,ADS,AGO006,Gestão de Projetos,Anderson Barbosa
+4,SEG,09:30-10:20,Lab.3,ADS,AGO005,Gestão de Projetos,Anderson Barbosa
+4,SEG,10:20-11:10,Lab.3,ADS,AGO005,Gestão de Projetos,Anderson Barbosa
+5,SEG,07:40-08:30,Sala 19,ADS,MPL002,Prog. Linear Aplicações,Cleber Pereira
+5,SEG,08:30-09:20,Sala 19,ADS,MPL003,Prog. Linear Aplicações,Cleber Pereira
+5,SEG,09:30-10:20,Lab.4,ADS,IRC008,Redes de Computadores,Luciano Fernandes
+5,SEG,10:20-11:10,Lab.4,ADS,IRC008,Redes de Computadores,Luciano Fernandes
+2,SEG,09:30-10:20,Sala 22,GE,EST017,Estatística Aplicada à Gestão,Clayde Mendes
+2,SEG,10:20-11:10,Sala 22,GE,EST017,Estatística Aplicada à Gestão,Clayde Mendes
+4,QUA,09:30-10:20,Lab.3,ADS,LIN400,Inglês IV,Daniela Dal Fabbro Amorim
+4,QUA,10:20-11:10,Lab.3,ADS,LIN400,Inglês IV,Daniela Dal Fabbro Amorim
+2,QUI,07:40-08:30,Sala 20,ADS,ILP022,Eletiva I - Prog. Scripts,Armando Vulcano Junior
+2,QUI,08:30-09:20,Sala 20,ADS,ILP022,Eletiva I - Prog. Scripts,Armando Vulcano Junior
+2,QUI,09:30-10:20,Sala 21,ADS,ILP022,Eletiva I - Prog. Scripts,Armando Vulcano Junior
+2,QUI,10:20-11:10,Sala 21,ADS,ILP022,Eletiva I - Prog. Scripts,Armando Vulcano Junior
+4,QUI,19:00-19:50,Lab.5,GTI,ILP951,Programação para Internet,Simone Lacerda
+4,QUI,19:50-20:40,Lab.5,GTI,ILP951,Programação para Internet,Simone Lacerda
+4,QUI,20:50-21:40,Lab.5,GTI,ILP951,Programação para Internet,Simone Lacerda
+4,QUI,21:40-22:30,Lab.5,GTI,ILP951,Programação para Internet,Simone Lacerda
+2,SEX,07:40-08:30,Sala 23,GE,EST017,Estatística Aplicada à Gestão,Clayde Mendes
+2,SEX,08:30-09:20,Sala 23,GE,EST017,Estatística Aplicada à Gestão,Clayde Mendes
+6,SEG,07:40-08:30,Sala 20,ADS,HST002,Sociedade e Tecnologia,Renato Fernandes
+6,SEG,08:30-09:20,Sala 20,ADS,HST002,Sociedade e Tecnologia,Renato Fernandes
+6,SEG,09:30-10:20,Sala 21,ADS,CEE002,Empreendedorismo,Pedro Carvalho
+6,SEG,10:20-11:10,Sala 21,ADS,CEE002,Empreendedorismo,Pedro Carvalho
+6,TER,07:40-08:30,Sala 20,ADS,IIA002,Esc. III Intelig. Artificial ,Simone Lacerda
+6,TER,08:30-09:20,Sala 20,ADS,IIA002,Esc. III Intelig. Artificial ,Simone Lacerda
+6,TER,09:30-10:20,Sala 21,ADS,ITI004,Gestão GTI,Luciano Fernandes
+6,TER,10:20-11:10,Sala 21,ADS,ITI004,Gestão GTI,Luciano Fernandes
+6,QUA,07:40-08:30,Sala 20,ADS,HSO003,Ética Resp. Profissional,Celso Hara
+6,QUA,08:30-09:20,Sala 20,ADS,HSO003,Ética Resp. Profissional,Celso Hara
+6,QUA,09:30-10:20,Sala 21,ADS,AGR107,Gestão de equipes,Pedro Carvalho
+6,QUA,10:20-11:10,Sala 21,ADS,AGR107,Gestão de equipes,Pedro Carvalho
+6,QUI,07:40-08:30,Sala 20,ADS,LIN600,Inglês VI,Marlucy Ribeiro
+6,QUI,08:30-09:20,Sala 20,ADS,LIN600,Inglês VI,Marlucy Ribeiro
+6,QUI,09:30-10:20,Sala 21,ADS,IIA002,Esc. III Intelig. Artificial ,Simone Lacerda
+6,QUI,10:20-11:10,Sala 21,ADS,IIA002,Esc. III Intelig. Artificial ,Simone Lacerda
+6,SEX,07:40-08:30,Sala 20,ADS,ISG003,Segurança da Informação,Luciano Fernandes
+6,SEX,08:30-09:20,Sala 20,ADS,ISG003,Segurança da Informação,Luciano Fernandes
+6,SEX,09:30-10:20,Sala 21,ADS,ITI004,Gestão GTI,Luciano Fernandes
+6,SEX,10:20-11:10,Sala 21,ADS,ITI004,Gestão GTI,Luciano Fernandes

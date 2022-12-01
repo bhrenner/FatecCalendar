@@ -1,0 +1,814 @@
+<Content>:
+    ScrollView:
+        MDList:
+            OneLineIconListItem:
+                text: "Aluno"     
+                on_release:
+                    root.nav_drawer.set_state("close")
+                    root.manager.current = "aluno"
+                IconLeftWidget:
+                    icon: "card-account-details"
+
+            OneLineIconListItem:
+                text: "Aula"     
+                on_release:
+                    root.nav_drawer.set_state("close")
+                    root.manager.current = "aula"
+                IconLeftWidget:
+                    icon: "pencil-box"
+
+            OneLineIconListItem:
+                text: "Grade"     
+                on_release:
+                    root.nav_drawer.set_state("close")
+                    root.manager.current = "grade"
+                IconLeftWidget:
+                    icon: "calendar-month"
+            
+            OneLineIconListItem:
+                text: "Faltas"
+                on_release:
+                    root.nav_drawer.set_state("close")
+                    root.manager.current = "faltas"
+                IconLeftWidget:
+                    icon: "notebook-remove"
+
+            OneLineIconListItem:
+                text: "Avaliações"
+                on_release:
+                    root.nav_drawer.set_state("close")
+                    root.manager.current = "avaliacoes"
+                IconLeftWidget:
+                    icon: "alert-decagram"
+
+            OneLineIconListItem:
+                text: "Notas"
+                on_release:
+                    root.nav_drawer.set_state("close")
+                    root.manager.current = "notas"
+                IconLeftWidget:
+                    icon: "book-alert"
+            
+            OneLineIconListItem:
+                text: "Extrato escolar"
+                on_release:
+                    root.nav_drawer.set_state("close")
+                    root.manager.current = "extrato"
+                IconLeftWidget:
+                    icon: "school"
+
+            OneLineIconListItem:
+                text: "Sair"     
+                on_release:
+                    root.nav_drawer.set_state("close")
+                    root.navigation("login")
+                IconLeftWidget:
+                    icon: "exit-to-app"
+            
+
+<DemoProject>:
+
+# Splash #######################################################################################################################    
+    Screen:
+        name: "splash"
+        MDFloatLayout:
+            md_bg_color: 143/255, 21/255, 21/255, 1
+            Image:
+                source: "FatecCalendar/img/LOGO.png"
+                size_hint: 0.9, 0.9
+                pos_hint:{"center_x": 0.5, "center_y":0.5}
+
+# TelaLogin #######################################################################################################################    
+    
+    Screen:    
+        name: "login"
+        MDFloatLayout:
+            md_bg_color: 143/255, 21/255, 21/255, 1
+            Image:
+                source: "FatecCalendar/img/LOGO.png"
+                size_hint: 0.7, 0.7
+                pos_hint:{"center_x": 0.5, "center_y":0.8}
+        
+            MDLabel:
+                text: "Usuário"
+                halign: "center"
+                pos_hint:{"center_x": 0.23,  "center_y":0.63}
+                theme_text_color: 'Custom'
+                text_color: 1,1,1,1
+                font_size: "25sp"
+                #font_name: "WorkSans-Bold.ttf"
+
+            MDTextFieldRound:
+                id: user
+                #icon_right: 'eye-off'
+                normal_color: 1,1,1,1
+                color_active: 247/255, 243/255, 235/255, 1
+                text_color: 1, 1, 1, 1
+                pos_hint:{"center_x": 0.5, "center_y":0.57}
+                size_hint_x: 0.65
+                size_hint_y: 0.05
+                #size_hint_y: 0.06
+                #hint_text: "CPF"
+                
+            MDLabel:
+                text: "Senha"
+                halign: "center"
+                pos_hint:{"center_x": 0.23,  "center_y":0.50}
+                theme_text_color: 'Custom'
+                text_color: 1,1,1,1
+                font_size: "25sp"
+                #font_name: "WorkSans-Bold.ttf"
+
+            MDTextFieldRound:
+                id: senha
+                #icon_right: 'eye-off'
+                normal_color: 1,1,1,1
+                color_active: 247/255, 243/255, 235/255, 1
+                pos_hint:{"center_x": 0.5, "center_y":0.44}
+                size_hint_x: 0.65
+                size_hint_y: 0.05
+                password: True
+                #size_hint_y: 0.06
+                #hint_text: "Senha"
+
+            MDCheckbox:
+                size_hint: None, None
+                size: "48dp", "48dp"
+                pos_hint: {'center_x': .3, 'center_y': .35}
+            
+            MDLabel:
+                text: "Continuar conectado"
+                halign: "center"
+                pos_hint: {'center_x': .53, 'center_y': .35}
+                theme_text_color: 'Custom'
+                text_color: 1,1,1,1
+                font_size: "19sp"
+
+            MDFillRoundFlatButton:
+                text: "Entrar"
+                halign: "center"
+                pos_hint:{"center_x": 0.5, "center_y":0.25}
+                size_hint_x: 0.75
+                size_hint_y: 0.07
+                md_bg_color: 175/255, 42/255, 42/255, 1
+                font_size: '25sp'
+                on_release: 
+                    root.navigation("home_com_login")
+ 
+ 
+            MDToolbar:
+                title: "Continue sem Logar"
+                font_size: 14
+                halign: 'center'
+                md_bg_color: 175/255, 42/255, 42/255, 1
+                right_action_items: [['arrow-right-bold', lambda x: root.navigation('home_sem_login')]]
+                font_name: "WorkSans-Bold.ttf"
+    
+
+# TelasemLogin #######################################################################################################################    
+                  
+    Screen: 
+        name: "home_sem_login"
+        MDFloatLayout:
+            md_bg_color: 143/255, 21/255, 21/255, 1
+        
+            MDToolbar:
+                md_bg_color: 143/255, 21/255, 21/255, 1
+                pos_hint: {"top": 1}
+                title: "F-Calendar"
+                elevation: 8
+                left_action_items: [["arrow-left-thick", lambda x: root.navigation("login")]]
+        
+
+            Image:
+                source: "FatecCalendar/img/LOGO.png"
+                size_hint: 0.5, 0.5
+                pos_hint:{"center_x": 0.5, "center_y":0.73}
+
+            MDLabel:
+                text: "Selecione o curso"
+                halign: "center"
+                pos_hint:{"center_x": 0.5,  "center_y":0.53}
+                theme_text_color: 'Custom'
+                text_color: 1,1,1,1
+                font_size: "25sp"
+
+            RoundedButton:
+                id: btn
+                text: "Clique para selecionar"
+                color: 1,1,1,1
+                pos_hint:{"center_x": 0.5,  "center_y":0.46}
+                size_hint: 0.7, 0.05
+                font_size: "20sp"
+                on_parent: drop_content.dismiss()
+                on_release: drop_content.open(self)
+
+            DropDown:
+                id: drop_content
+                on_select: btn.text = f'{args[1]}' # see note below            
+                Button:
+                    id: btn1
+                    text: 'Análise e Desenvolvimento de Sistemas'
+                    background_color: (255,255,255)
+                    font_size: "18sp"
+                    color: 0,0,0,1
+                    size_hint_x: 0.7
+                    size_hint_y: None
+                    height: 35
+                    on_release: drop_content.select('ADS')
+
+                Button:
+                    id: btn2
+                    text: 'Gestão Empresarial'
+                    background_color: (255,255,255)
+                    font_size: "18sp"
+                    color: 0,0,0,1
+                    size_hint_x: 0.7
+                    size_hint_y: None
+                    height: 35
+                    on_release: drop_content.select('GE')
+
+                Button:
+                    id: btn3
+                    text: 'Gestão da Tecnologia da Informção'
+                    background_color: (255,255,255)
+                    font_size: "18sp"
+                    color: 0,0,0,1
+                    size_hint_x: 0.7
+                    size_hint_y: None
+                    height: 35
+                    on_release: drop_content.select('GTI') 
+
+                Button:
+                    id: btn4
+                    text: 'Processos Químicos'
+                    background_color: (255,255,255)
+                    font_size: "18sp"
+                    color: 0,0,0,1
+                    size_hint_x: 0.7
+                    size_hint_y: None
+                    height: 35
+                    on_release: drop_content.select('PQ')
+
+                Button:
+                    id: btn5
+                    text: 'Gestão de Energia e Eficiência Energética'
+                    background_color: (255,255,255)
+                    font_size: "18sp"
+                    color: 0,0,0,1
+                    size_hint_x: 0.7
+                    size_hint_y: None
+                    height: 35
+                    on_release: drop_content.select('GEE')
+
+                
+            
+            MDLabel:
+                text: "Selecione o semestre"
+                halign: "center"
+                pos_hint:{"center_x": 0.5,  "center_y":0.37}
+                theme_text_color: 'Custom'
+                text_color: 1,1,1,1
+                font_size: "25sp"
+
+            RoundedButton:
+                id: sem
+                text: "Clique para selecionar"
+                color: 1,1,1,1
+                pos_hint:{"center_x": 0.5,  "center_y":0.30}
+                size_hint: 0.7, 0.05
+                font_size: "20sp"
+                on_parent: drop_content_sem.dismiss()
+                on_release: drop_content_sem.open(self)
+            
+            DropDown:
+                id: drop_content_sem
+                on_select: sem.text = f'{args[1]}' # see note below            
+                Button:
+                    id: bt_sem1
+                    text: '1° Semestre'
+                    background_color: (255,255,255)
+                    font_size: "18sp"
+                    color: 0,0,0,1
+                    size_hint_x: 0.7
+                    size_hint_y: None
+                    height: 35
+                    on_release:  drop_content_sem.select('1')
+
+                Button:
+                    id: bt_sem2
+                    text: '2° Semestre'
+                    background_color: (255,255,255)
+                    font_size: "18sp"
+                    color: 0,0,0,1
+                    size_hint_x: 0.7
+                    size_hint_y: None
+                    height: 35
+                    on_release: drop_content_sem.select('2')
+                Button:
+                    id: bt_sem3
+                    text: '3° Semestre'
+                    background_color: (255,255,255)
+                    font_size: "18sp"
+                    color: 0,0,0,1
+                    size_hint_x: 0.7
+                    size_hint_y: None
+                    height: 35
+                    on_release: drop_content_sem.select('3') 
+
+                Button:
+                    id: bt_sem4
+                    text: '4° Semestre'
+                    background_color: (255,255,255)
+                    font_size: "18sp"
+                    color: 0,0,0,1
+                    size_hint_x: 0.7
+                    size_hint_y: None
+                    height: 35
+                    on_release: drop_content_sem.select('4')
+
+                Button:
+                    id: bt_sem5
+                    text: '5° Semestre'
+                    background_color: (255,255,255)
+                    font_size: "18sp"
+                    color: 0,0,0,1
+                    size_hint_x: 0.7
+                    size_hint_y: None
+                    height: 35
+                    on_release: drop_content_sem.select('5')
+                
+                Button:
+                    id: bt_sem6
+                    text: '6° Semestre'
+                    background_color: (255,255,255)
+                    font_size: "18sp"
+                    color: 0,0,0,1
+                    size_hint_x: 0.7
+                    size_hint_y: None
+                    height: 35
+                    on_release: drop_content_sem.select('6')
+            
+            
+            MDFillRoundFlatButton:
+                text: "Buscar"
+                halign: "center"
+                pos_hint:{"center_x": 0.5, "center_y":0.15}
+                size_hint_x: 0.75
+                size_hint_y: 0.07
+                md_bg_color: 175/255, 42/255, 42/255, 1
+                font_size: "28sp"
+                on_release:
+                    if  app.show_alert_dialog() == True:\
+                    print("Errado")
+                    else: root.navigation("grade_geral")
+
+       
+    Deslogado:
+    Screen:
+        name: "home_com_login"
+        MDToolbar:
+            md_bg_color: 143/255, 21/255, 21/255, 1
+            pos_hint: {"top": 1}
+            title: "F-Calendar"
+            elevation: 8
+            left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+
+        MDNavigationLayout:
+            ScreenManager:
+                id: screen_manager
+                Aula:                        
+                Aluno:
+                Grade:
+                Faltas:
+                Notas:
+                Avaliacoes:
+                Extrato:
+
+            MDNavigationDrawer:
+                id: nav_drawer
+                Content:
+                    manager: screen_manager
+                    nav_drawer: nav_drawer
+                
+<Deslogado>:
+    name: "grade_geral"   
+    MDToolbar:
+        md_bg_color: 143/255, 21/255, 21/255, 1
+        pos_hint: {"top": 1}
+        title: "Grade Semanal"
+        elevation: 8
+        left_action_items: [["arrow-left-thick", lambda x: root.navigation("home_sem_login")]] 
+
+    ScreenManager:
+        id: "screenM"
+        name: "screenM"
+        Screen:
+            id: "tela"
+            name: "tela"
+            MDFloatLayout:
+                id: 'fl'
+                MPanel:
+                    border: [0, 0, 0, 0]
+                    adaptive_size: True
+                    background_color: 0,0,0,0
+                    color_active: 1,1,1,1
+                    #size_hint: 1,1
+                    tab_pos: "top_mid"
+                    pos_hint: {"center_x": .5 , "center_y": .395}
+                    do_default_tab: False
+                    font_size: 14
+
+                    TabbedPanelItem:
+                        name: "Segunda-feira"
+                        text: "Segunda-feira"
+                        on_release: root.add_table(app.path(), 'segunda')
+                        BoxLayout:
+                            orientation:'vertical'
+                            MDLabel:
+                                text: "Aulas Segunda"
+                                halign: "center"
+                                pos_hint:{"center_x": 0.5 , "center_y": 0.8}
+                            
+                            MDBottomAppBar:
+                                md_bg_color: 143/255, 21/255, 21/255, 1
+                                MDToolbar:
+                                    icon: "home"
+                                    md_bg_bottom_color: 143/255, 21/255, 21/255, 1
+                                    icon_color: self.md_bg_bottom_color
+                                    left_action_items: [["arrow-left-bold-circle", lambda x: x]]
+                                    right_action_items: [["arrow-right-bold-circle", lambda x: x]]
+                                    type: 'bottom' 
+                                    mode: "center"
+
+                    TabbedPanelItem:
+                        text: "Terça-feira"
+                        on_release: root.add_table(app.path(), 'terca')
+                        BoxLayout:
+                            orientation:'vertical'
+                            MDLabel:
+                                text: "Aulas Terça-feira"
+                                halign: "center"
+                                pos_hint: {"center_x": .5 , "center_y": .45}
+                                
+                            MDBottomAppBar:
+                                md_bg_color: 143/255, 21/255, 21/255, 1
+                                MDToolbar:
+                                    icon: "home"
+                                    md_bg_bottom_color: 143/255, 21/255, 21/255, 1
+                                    icon_color: self.md_bg_bottom_color
+                                    left_action_items: [["arrow-left-bold-circle", lambda x: x]]
+                                    right_action_items: [["arrow-right-bold-circle", lambda x: x]]
+                                    type: 'bottom' 
+                                    mode: "center"
+
+                    TabbedPanelItem:
+                        text: "Quarta-feira"
+                        on_release: root.add_table(app.path(), 'quarta')
+                        BoxLayout:
+                            orientation:'vertical'
+                            MDLabel:
+                                text: "Aulas Quarta-feira"
+                                halign: "center"
+                                pos_hint: {"center_x": .5 , "center_y": .45}
+                                
+                            MDBottomAppBar:
+                                md_bg_color: 143/255, 21/255, 21/255, 1
+                                MDToolbar:
+                                    icon: "home"
+                                    md_bg_bottom_color: 143/255, 21/255, 21/255, 1
+                                    icon_color: self.md_bg_bottom_color
+                                    left_action_items: [["arrow-left-bold-circle", lambda x: x]]
+                                    right_action_items: [["arrow-right-bold-circle", lambda x: x]]
+                                    type: 'bottom' 
+                                    mode: "center"
+
+                    TabbedPanelItem:
+                        text: "Quinta-feira"
+                        on_release: root.add_table(app.path(), 'quinta')
+                        BoxLayout:
+                            orientation:'vertical'
+                            MDLabel:
+                                text: "Aulas Quinta-feira"
+                                halign: "center"
+                                pos_hint: {"center_x": .5 , "center_y": .45}
+
+                            MDBottomAppBar:
+                                md_bg_color: 143/255, 21/255, 21/255, 1
+                                MDToolbar:
+                                    icon: "home"
+                                    md_bg_bottom_color: 143/255, 21/255, 21/255, 1
+                                    icon_color: self.md_bg_bottom_color
+                                    left_action_items: [["arrow-left-bold-circle", lambda x: x]]
+                                    right_action_items: [["arrow-right-bold-circle", lambda x: x]]
+                                    type: 'bottom' 
+                                    mode: "center"
+                    
+                    TabbedPanelItem:
+                        text: "Sexta-feira"
+                        on_release: root.add_table(app.path(), 'sexta')
+                        BoxLayout:
+                            orientation:'vertical'
+                            MDLabel:
+                                text: "Aulas Sexta-feira"
+                                halign: "center"
+                                pos_hint: {"center_x": .5 , "center_y": .45}
+                                
+                            MDBottomAppBar:
+                                md_bg_color: 143/255, 21/255, 21/255, 1
+                                MDToolbar:
+                                    icon: "home"
+                                    md_bg_bottom_color: 143/255, 21/255, 21/255, 1
+                                    icon_color: self.md_bg_bottom_color
+                                    left_action_items: [["arrow-left-bold-circle", lambda x: x]]
+                                    right_action_items: [["arrow-right-bold-circle", lambda x: x]]
+                                    type: 'bottom' 
+                                    mode: "center"
+
+                    TabbedPanelItem:
+                        name: "Sabado"
+                        text: "Sabado"
+                        on_release: root.add_table(app.path(), 'sabado')
+                        BoxLayout:
+                            orientation:'vertical'
+                            MDLabel:
+                                text: "Aulas Sabado"
+                                halign: "center"
+                                pos_hint: {"center_x": .5 , "center_y": .45}
+                                
+                            MDBottomAppBar:
+                                md_bg_color: 143/255, 21/255, 21/255, 1
+                                MDToolbar:
+                                    icon: "home"
+                                    md_bg_bottom_color: 143/255, 21/255, 21/255, 1
+                                    icon_color: self.md_bg_bottom_color
+                                    left_action_items: [["arrow-left-bold-circle", lambda x: x]]
+                                    right_action_items: [["arrow-right-bold-circle", lambda x: root.switch("Segunda-feira")]]
+                                    type: 'bottom' 
+                                    mode: "center"            
+# Telas Aluno #######################################################################################################################    
+<Aluno>:
+    name: "aluno"
+    MDFloatLayout:
+        Image:
+            source: "FatecCalendar/img/profile-user.png"
+            size_hint: 0.5, 0.5
+            pos_hint:{"center_x": 0.5, "center_y":0.73}
+
+        MDLabel:
+            text: "Selecione o curso"
+            halign: "center"
+            pos_hint:{"center_x": 0.5,  "center_y":0.53}
+            theme_text_color: 'Custom'
+            text_color: 0,0,0,1
+            font_size: "25sp"
+
+    MDBottomAppBar:
+        md_bg_color: 143/255, 21/255, 21/255, 1
+        MDToolbar:
+            icon: "home"
+            md_bg_bottom_color: 143/255, 21/255, 21/255, 1
+            icon_color: self.md_bg_bottom_color
+            type: 'bottom' 
+            mode: "center"
+            #on_release: root.manager.current = "screen1"
+
+<Aula>:
+    name: "aula"
+    on_enter: root.add_table('segunda')
+    ScreenManager:
+        Screen:
+            name: "dia1"
+            MDFloatLayout:
+                MPanel:
+                    border: [0, 0, 0, 0]
+                    adaptive_size: True
+                    background_color: 0,0,0,0
+                    color_active: 1,1,1,1
+                    #size_hint: 1,1
+                    tab_pos: "top_mid"
+                    pos_hint: {"center_x": .5 , "center_y": .395}
+                    do_default_tab: False
+                    font_size: 14
+
+                    TabbedPanelItem:
+                        name: "Segunda-feira"
+                        text: "Segunda-feira"
+                        on_release: root.add_table('segunda')
+                        BoxLayout:
+                            orientation:'vertical'
+                            MDLabel:
+                                text: "Aulas Segunda"
+                                halign: "center"
+                                pos_hint:{"center_x": 0.5 , "center_y": 0.8}
+                            
+                            MDBottomAppBar:
+                                md_bg_color: 143/255, 21/255, 21/255, 1
+                                MDToolbar:
+                                    icon: "home"
+                                    md_bg_bottom_color: 143/255, 21/255, 21/255, 1
+                                    icon_color: self.md_bg_bottom_color
+                                    left_action_items: [["arrow-left-bold-circle", lambda x: x]]
+                                    right_action_items: [["arrow-right-bold-circle", lambda x: x]]
+                                    type: 'bottom' 
+                                    mode: "center"
+
+                    TabbedPanelItem:
+                        text: "Terça-feira"
+                        on_release: root.add_table('terca')
+                        BoxLayout:
+                            orientation:'vertical'
+                            MDLabel:
+                                text: "Aulas Terça-feira"
+                                halign: "center"
+                                pos_hint: {"center_x": .5 , "center_y": .45}
+                            
+                            MDBottomAppBar:
+                                md_bg_color: 143/255, 21/255, 21/255, 1
+                                MDToolbar:
+                                    icon: "home"
+                                    md_bg_bottom_color: 143/255, 21/255, 21/255, 1
+                                    icon_color: self.md_bg_bottom_color
+                                    left_action_items: [["arrow-left-bold-circle", lambda x: x]]
+                                    right_action_items: [["arrow-right-bold-circle", lambda x: x]]
+                                    type: 'bottom' 
+                                    mode: "center"
+
+                    TabbedPanelItem:
+                        text: "Quarta-feira"
+                        on_release: root.add_table('quarta')
+                        BoxLayout:
+                            orientation:'vertical'
+                            MDLabel:
+                                text: "Aulas Quarta-feira"
+                                halign: "center"
+                                pos_hint: {"center_x": .5 , "center_y": .45}
+                            
+                            MDBottomAppBar:
+                                md_bg_color: 143/255, 21/255, 21/255, 1
+                                MDToolbar:
+                                    icon: "home"
+                                    md_bg_bottom_color: 143/255, 21/255, 21/255, 1
+                                    icon_color: self.md_bg_bottom_color
+                                    left_action_items: [["arrow-left-bold-circle", lambda x: x]]
+                                    right_action_items: [["arrow-right-bold-circle", lambda x: x]]
+                                    type: 'bottom' 
+                                    mode: "center"
+
+                    TabbedPanelItem:
+                        text: "Quinta-feira"
+                        on_release: root.add_table('quinta')
+                        BoxLayout:
+                            orientation:'vertical'
+                            MDLabel:
+                                text: "Aulas Quinta-feira"
+                                halign: "center"
+                                pos_hint: {"center_x": .5 , "center_y": .45}
+
+                            MDBottomAppBar:
+                                md_bg_color: 143/255, 21/255, 21/255, 1
+                                MDToolbar:
+                                    icon: "home"
+                                    md_bg_bottom_color: 143/255, 21/255, 21/255, 1
+                                    icon_color: self.md_bg_bottom_color
+                                    left_action_items: [["arrow-left-bold-circle", lambda x: x]]
+                                    right_action_items: [["arrow-right-bold-circle", lambda x: x]]
+                                    type: 'bottom' 
+                                    mode: "center"
+                    
+                    TabbedPanelItem:
+                        text: "Sexta-feira"
+                        on_release: root.add_table('sexta')
+                        BoxLayout:
+                            orientation:'vertical'
+                            MDLabel:
+                                text: "Aulas Sexta-feira"
+                                halign: "center"
+                                pos_hint: {"center_x": .5 , "center_y": .45}
+                            
+                            MDBottomAppBar:
+                                md_bg_color: 143/255, 21/255, 21/255, 1
+                                MDToolbar:
+                                    icon: "home"
+                                    md_bg_bottom_color: 143/255, 21/255, 21/255, 1
+                                    icon_color: self.md_bg_bottom_color
+                                    left_action_items: [["arrow-left-bold-circle", lambda x: x]]
+                                    right_action_items: [["arrow-right-bold-circle", lambda x: x]]
+                                    type: 'bottom' 
+                                    mode: "center"
+
+                    TabbedPanelItem:
+                        name: "Sabado"
+                        text: "Sabado"
+                        on_release: root.add_table('sabado')
+                        BoxLayout:
+                            orientation:'vertical'
+                            MDLabel:
+                                text: "Aulas Sabado"
+                                halign: "center"
+                                pos_hint: {"center_x": .5 , "center_y": .45}
+                            
+                            MDBottomAppBar:
+                                md_bg_color: 143/255, 21/255, 21/255, 1
+                                MDToolbar:
+                                    icon: "home"
+                                    md_bg_bottom_color: 143/255, 21/255, 21/255, 1
+                                    icon_color: self.md_bg_bottom_color
+                                    left_action_items: [["arrow-left-bold-circle", lambda x: x]]
+                                    right_action_items: [["arrow-right-bold-circle", lambda x: root.switch("Segunda-feira")]]
+                                    type: 'bottom' 
+                                    mode: "center"
+    
+
+<Grade>:
+    name: "grade"
+    on_enter: root.add_table('grade')
+    MDLabel:
+        text: "Grade Semanal"
+        halign: "center"
+
+    MDBottomAppBar:
+        md_bg_color: 143/255, 21/255, 21/255, 1
+        MDToolbar:
+            icon: "home"
+            md_bg_bottom_color: 143/255, 21/255, 21/255, 1
+            icon_color: self.md_bg_bottom_color
+            type: 'bottom' 
+            mode: "center"
+            #on_release: root.manager.current = "screen1"
+
+<Faltas>:
+    name: "faltas"
+    MDLabel:
+        text: "Faltas Parciais"
+        halign: "center"
+
+    MDBottomAppBar:
+        md_bg_color: 143/255, 21/255, 21/255, 1
+        MDToolbar:
+            icon: "home"
+            md_bg_bottom_color: 143/255, 21/255, 21/255, 1
+            icon_color: self.md_bg_bottom_color
+            type: 'bottom' 
+            mode: "center"
+            #on_release: root.manager.current = "screen1"
+
+<Avaliacoes>:
+    name: "avaliacoes"
+    MDLabel:
+        text: "Datas de Avaliações"
+        halign: "center"
+
+    MDBottomAppBar:
+        md_bg_color: 143/255, 21/255, 21/255, 1
+        MDToolbar:
+            icon: "home"
+            md_bg_bottom_color: 143/255, 21/255, 21/255, 1
+            icon_color: self.md_bg_bottom_color
+            type: 'bottom' 
+            mode: "center"
+            #on_release: root.manager.current = "screen1"
+
+<Notas>:
+    name: "notas"
+    MDLabel:
+        text: "Notas Parciais"
+        halign: "center"
+
+    MDBottomAppBar:
+        md_bg_color: 143/255, 21/255, 21/255, 1
+        MDToolbar:
+            icon: "home"
+            md_bg_bottom_color: 143/255, 21/255, 21/255, 1
+            icon_color: self.md_bg_bottom_color
+            type: 'bottom' 
+            mode: "center"
+            #on_release: root.manager.current = "screen1"
+
+<Extrato>:
+    name: "extrato"
+    MDLabel:
+        text: "Extrato simples"
+        halign: "center"
+
+    MDBottomAppBar:
+        md_bg_color: 143/255, 21/255, 21/255, 1
+        MDToolbar:
+            icon: "home"
+            md_bg_bottom_color: 143/255, 21/255, 21/255, 1
+            icon_color: self.md_bg_bottom_color
+            type: 'bottom' 
+            mode: "center"
+            #on_release: root.manager.current = "screen1"                        
+
+<RoundedButton@Button>
+	background_color: (0,0,0,0)
+	background_normal: ''
+	canvas.before:
+		Color:
+            rgba: (255/255, 0/255, 60/255, 0.77)
+			
+		RoundedRectangle:
+			size: self.size
+			pos: self.pos
+			radius: [20]
